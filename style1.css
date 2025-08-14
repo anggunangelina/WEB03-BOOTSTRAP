@@ -1,0 +1,137 @@
+/* Global */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Body fleksibel untuk konten */
+body {
+  min-height: 100vh;
+}
+
+/* Main untuk menutupi space di antara header dan footer */
+main {
+  flex: 1;
+}
+
+/* Header */
+.header {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 40px;
+  height: 80px;
+  border-bottom: 5px solid #000000;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+}
+.logo img {
+  height: 60px;
+  width: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.header-text h2 {
+  font-family: Tahoma, sans-serif;
+  font-size: 30px;
+  margin: 0;
+  font-weight: bold;
+}
+.header-text {
+  font-size: 14px;
+  color: #000;
+}
+
+/* Section full screen */
+section, .hero, .activity {
+  min-height: 100vh; /* full layar */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* konten di tengah vertikal */
+}
+
+/* Feature Box / Profil Detail */
+.feature-box {
+  background: gold;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.feature-box h2 {
+  margin-bottom: 20px;
+}
+
+/* Tombol Kembali */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fbbf24;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.btn:hover {
+  background-color: #fcd34d;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Konten Profil Detail */
+.profil-detail {
+  background: gold;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 30px;
+  color: black;
+}
+
+/* Footer tetap di bawah */
+.footer {
+  width: 100%;
+  background: #030524;
+  border-top: 5px solid #000;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  margin-top: auto; /* menempel di bawah */
+}
+.footer p {
+  margin: 5px 0;
+}
+
+/* Responsif */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+  .header-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

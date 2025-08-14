@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compensasser</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="asset/IMG/LOGO.png" alt="Logo">
+      </div>
+      <div class="header-text">
+        <h2>COMPENSASSER</h2>
+        PER NATURAM DEUM AMAMUS
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="nav-container">
+      <div class="nav desktop-nav">
+        <span><a href="#home">Home</a></span>
+        <span><a href="#profil">Profil</a></span>
+        <span><a href="#activity">Activity</a></span>
+        <span><a href="#about">About</a></span>
+      </div>
+
+      <div class="mobile-nav">
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="#home">Home</a>
+          <a href="#profil">Profil</a>
+          <a href="#activity">Activity</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero" id="home">
+    <h1>MAPALA POLITEKNIK ATMI SURAKARTA</h1>
+  </div>
+
+  <!-- Profil -->
+  <section class="profil" id="profil">
+    <div class="container">
+      <div class="profil-row row">
+  <div class="feature-box col-md-4">
+  <a href="sejarah.html" style="text-decoration:none; color:black;">
+    <h2>SEJARAH</h2>
+  </a>
+</div>
+<div class="feature-box col-md-4">
+  <a href="kepengurusan.html" style="text-decoration:none; color:black;">
+    <h2>KEPENGURUSAN</h2>
+  </a>
+</div>
+<div class="feature-box col-md-4">
+  <a href="berita.html" style="text-decoration:none; color:black;">
+    <h2>NEWS</h2>
+  </a>
+</div>
+
+    </div>
+  </section>
+
+  <!-- Activity -->
+  <div class="section activity" id="activity">
+    <div class="activity-container container">
+      <div class="activity-row row">
+        <div class="activity-box col-md-4">
+          <img src="asset/IMG/DIKSAR.JPG" alt="Kegiatan 1" loading="lazy">
+          <p><strong>DIKLAT SAR ANGKATAN 16</strong></p>
+          Menapak Jejak, Menjalin Asa...
+        </div>
+        <div class="activity-box col-md-4">
+          <img src="asset/IMG/PENMAS.JPG" alt="Kegiatan 2" loading="lazy">
+          <p><strong>PENDAKIAN MASAL 2025</strong></p>
+          Cerita kecil di Gunung Merbabu...
+        </div>
+        <div class="activity-box col-md-4">
+          <img src="asset/IMG/RAPLING.JPG" alt="Kegiatan 3" loading="lazy">
+          <p><strong>RAPPELING</strong></p>
+          Bergulat dengan kepercayaan...
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <button class="btn">Lihat Semua Kegiatan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section class="contact" id="about">
+    <div class="container">
+      <h2 class="section-title">ABOUT</h1>
+      <div class="contact-row row">
+        <div class="contact-box col-md-4">
+          <h3>Contact</h3>
+          <p><strong>Phone:</strong> <a href="tel:+6289674341692">+62 89674341692</a></p>
+          <p><strong>Email:</strong> <a href="mailto:compensasser@gmail.com">compensasser@gmail.com</a></p>
+        </div>
+        <div class="contact-box col-md-4">
+          <h3>Media Sosial</h3>
+          <p>
+            <a href="https://www.instagram.com/compensasser?igsh=ZHJrbGZwYmoyYnF6&utm_source=qr" target="_blank">Instagram</a> |
+            <a href="https://wa.me/6289674341692" target="_blank">WhatsApp</a>
+          </p>
+        </div>
+        <div class="contact-box col-md-4">
+          <h3>Lokasi</h3>
+          <p>
+            <a href="https://maps.app.goo.gl/RDUNEhAvE3WdFvFk9" target="_blank">POLITEKNIK ATMI SURAKARTA</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>SALAM LESTARI!</p>
+    <p>&copy; COMPENSASSER 2025</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    const navLinks = document.querySelectorAll('.nav a, .mobile-menu a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({behavior: 'smooth'});
+    // Tutup mobile menu setelah klik
+    if(mobileMenu.classList.contains('show')){
+      mobileMenu.classList.remove('show');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
