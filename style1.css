@@ -62,24 +62,30 @@ section, .hero, .activity {
   justify-content: center; /* konten di tengah vertikal */
 }
 
-/* Feature Box / Profil Detail */
 .feature-box {
   background: gold;
-  border: 2px solid #000;
-  border-radius: 10px;
-  padding: 30px;
+  border: 3px solid #000;
+  border-radius: 15px;
+  padding: 80px; /* padding jauh lebih besar */
   text-align: center;
   color: black;
   font-weight: bold;
+  font-size: 1.5rem; /* isi teks besar */
+  max-width: 1200px; /* container lebih lebar */
+  margin: 0px auto; /* ada jarak atas bawah */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .feature-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
+
 .feature-box h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 3rem; /* judul super besar */
 }
+
 
 /* Tombol Kembali */
 .btn {

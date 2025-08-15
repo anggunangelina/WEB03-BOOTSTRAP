@@ -75,58 +75,116 @@
     </div>
   </section>
 
-  <!-- Activity -->
-  <div class="section activity" id="activity">
-    <div class="activity-container container">
-      <div class="activity-row row">
-        <div class="activity-box col-md-4">
+<!-- Activity -->
+<div class="section activity" id="activity">
+  <div class="activity-container container">
+    <div class="activity-row row">
+
+      <!-- Kegiatan 1 -->
+      <div class="activity-box col-md-4">
+        <a href="activity1.html" style="text-decoration:none; color:black;">
           <img src="asset/IMG/DIKSAR.JPG" alt="Kegiatan 1" loading="lazy">
           <p><strong>DIKLAT SAR ANGKATAN 16</strong></p>
           Menapak Jejak, Menjalin Asa...
-        </div>
-        <div class="activity-box col-md-4">
+        </a>
+      </div>
+
+      <!-- Kegiatan 2 -->
+      <div class="activity-box col-md-4">
+        <a href="activity2.html" style="text-decoration:none; color:black;">
           <img src="asset/IMG/PENMAS.JPG" alt="Kegiatan 2" loading="lazy">
           <p><strong>PENDAKIAN MASAL 2025</strong></p>
           Cerita kecil di Gunung Merbabu...
-        </div>
-        <div class="activity-box col-md-4">
+        </a>
+      </div>
+
+      <!-- Kegiatan 3 -->
+      <div class="activity-box col-md-4">
+        <a href="activity3.html" style="text-decoration:none; color:black;">
           <img src="asset/IMG/RAPLING.JPG" alt="Kegiatan 3" loading="lazy">
           <p><strong>RAPPELING</strong></p>
           Bergulat dengan kepercayaan...
-        </div>
+        </a>
       </div>
-      <div class="text-center mt-3">
-        <button class="btn">Lihat Semua Kegiatan</button>
-      </div>
+
+    </div>
+
+    <div class="text-center mt-3">
+      <button class="btn" onclick="window.location.href='all-activity.html'">Lihat Semua Kegiatan</button>
     </div>
   </div>
+</div>
+
 
   <!-- Contact -->
-  <section class="contact" id="about">
-    <div class="container">
-      <h2 class="section-title">ABOUT</h1>
-      <div class="contact-row row">
-        <div class="contact-box col-md-4">
-          <h3>Contact</h3>
-          <p><strong>Phone:</strong> <a href="tel:+6289674341692">+62 89674341692</a></p>
-          <p><strong>Email:</strong> <a href="mailto:compensasser@gmail.com">compensasser@gmail.com</a></p>
-        </div>
-        <div class="contact-box col-md-4">
-          <h3>Media Sosial</h3>
-          <p>
-            <a href="https://www.instagram.com/compensasser?igsh=ZHJrbGZwYmoyYnF6&utm_source=qr" target="_blank">Instagram</a> |
-            <a href="https://wa.me/6289674341692" target="_blank">WhatsApp</a>
-          </p>
-        </div>
-        <div class="contact-box col-md-4">
-          <h3>Lokasi</h3>
-          <p>
-            <a href="https://maps.app.goo.gl/RDUNEhAvE3WdFvFk9" target="_blank">POLITEKNIK ATMI SURAKARTA</a>
-          </p>
-        </div>
+<section class="contact" id="about">
+  <div class="container">
+    <h2 class="section-title">ABOUT</h2>
+    <div class="contact-row row">
+      <div class="contact-box col-md-4">
+        <h3>Contact</h3>
+        <p><strong>Phone:</strong> <a href="tel:+6289674341692">+62 89674341692</a></p>
+        <p><strong>Email:</strong> <a href="mailto:compensasser@gmail.com">compensasser@gmail.com</a></p>
+      </div>
+      <div class="contact-box col-md-4">
+        <h3>Media Sosial</h3>
+        <p>
+          <a href="https://www.instagram.com/compensasser?igsh=ZHJrbGZwYmoyYnF6&utm_source=qr" target="_blank">Instagram</a> |
+          <a href="https://wa.me/6289674341692" target="_blank">WhatsApp</a>
+        </p>
+      </div>
+      <div class="contact-box col-md-4">
+        <h3>Lokasi</h3>
+        <p>
+          <a href="https://maps.app.goo.gl/RDUNEhAvE3WdFvFk9" target="_blank">POLITEKNIK ATMI SURAKARTA</a>
+        </p>
       </div>
     </div>
-  </section>
+
+     <!-- Line Chart -->
+    <div class="mt-5">
+      <h3 class="text-center">Jumlah Anggota Per Tahun</h3>
+      <canvas id="participantsChart" height="100"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('participantsChart').getContext('2d');
+  const participantsChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2022', '2023', '2024'],
+      datasets: [{
+        label: 'Jumlah Anggota Tetap',
+        data: [26, 25, 35],
+        borderColor: '#007bff',
+        backgroundColor: 'rgba(0, 123, 255, 0.2)',
+        tension: 0.3,
+        fill: true,
+        pointBackgroundColor: '#007bff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: true, position: 'top' }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: 'Jumlah Peserta' }
+        },
+        x: {
+          title: { display: true, text: 'Tahun' }
+        }
+      }
+    }
+  });
+</script>
+
 
   <!-- Footer -->
   <footer class="footer">
@@ -158,6 +216,8 @@ navLinks.forEach(link => {
       });
     });
   </script>
+
+  
 
 </body>
 </html>
